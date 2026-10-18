@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>簡易點餐系統</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="line-shell">
+    <div class="top-bar">
+      <span class="status-dot"></span>
+      <span class="status-text">線上點餐</span>
+    </div>
+
+    <header class="line-header">
+      <button class="back-btn" aria-label="返回">←</button>
+      <div class="header-info">
+        <strong>點餐小助手</strong>
+        <span>線上點餐系統</span>
+      </div>
+      <div class="header-avatar">外</div>
+    </header>
+
+    <main class="main-grid">
+      <section class="menu-section">
+        <div class="section-title">
+          <h2>菜單</h2>
+          <p>選擇分類，加入餐點。</p>
+        </div>
+        <div id="categoryTabs" class="category-tabs"></div>
+        <div id="menuList" class="menu-list"></div>
+      </section>
+
+      <aside class="order-section">
+        <div class="section-title">
+          <h2>購物車</h2>
+          <p>已加入的餐點</p>
+        </div>
+        <div id="orderSummary" class="order-summary">
+          <p class="empty">目前尚未點餐。</p>
+        </div>
+        <div class="order-actions">
+          <button id="clearOrderBtn" class="secondary">清空</button>
+          <button id="submitOrderBtn">送出訂單</button>
+        </div>
+        <div class="total-row">
+          <span>總計</span>
+          <strong id="totalAmount">NT$ 0</strong>
+        </div>
+        <section class="submitted-orders">
+          <h3>已送出訂單</h3>
+          <div id="submittedOrders" class="submitted-order-list">
+            <p class="empty">目前沒有已送出的訂單。</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <div id="customizeModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h3>自訂便當配菜</h3>
+          <p class="modal-desc">最多可選 3 樣配菜，若選第 4 樣則加價 NT$ 15。</p>
+        </div>
+        <button id="closeModalBtn" class="modal-close" aria-label="關閉">×</button>
+      </div>
+      <div id="sideOptions" class="side-options"></div>
+      <div class="modal-actions">
+        <button id="cancelModalBtn" class="secondary">取消</button>
+        <button id="confirmSidesBtn">加入訂單</button>
+      </div>
+    </div>
+  </div>
+<script type="module" src="script.js"></script>
+</body>
+</html>
